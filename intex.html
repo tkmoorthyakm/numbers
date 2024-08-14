@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Generator</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://t3.ftcdn.net/jpg/07/54/18/78/360_F_754187832_1Mtxi0coGODZspbLpkr4Bc32rsrNF005.jpg');
+      background-size: cover;
+      background-position: center; 
+    }
+    .container {
+      background: #d4cfcf;
+      border-radius: 15px;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 1400px;
+      width: 100%;
+    }
+    #color-display {
+      width: 1200px;
+      height: 200px;
+      margin: 20px auto;
+      border-radius: 10px;
+      border: 5px solid #e69c9c;
+      background-color: #e6e9f0;
+      transition: background-color 0.15s ease;
+    }
+    #color-code {
+      font-size: 1.5em;
+      margin-top: 20px;
+      transition: color 0.5s ease;
+    }
+    #generate-btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1em;
+      color: #4813ba;
+      background-color: #63ce53;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    #generate-btn:hover {
+      background-color: #3e7308;
+      transform: translateY(-3px);
+    }
+    #powered-by {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="color-display"></div>
+    <div id="color-code">Click the button to generate a color!</div>
+    <button id="generate-btn">Generate Color</button>
+    <div id="powered-by">Powered by - Kannayiramoorthy.T</div>
+  </div>
+
+  <script>
+    document.getElementById('generate-btn').addEventListener('click', function() {
+      const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+      document.getElementById('color-display').style.backgroundColor = randomColor;
+      document.getElementById('color-code').textContent = randomColor;
+    });
+  </script>
+</body>
+</html>
